@@ -8,7 +8,7 @@ attr_reader :backers, :title
 
   def add_backer(backer)
     @backers << backer
-    backer.back_project(self)
+    backer.backed_projects.include?(self) ? nil : backer.back_project(self)
   end
 
 end
